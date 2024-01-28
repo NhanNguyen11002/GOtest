@@ -28,4 +28,8 @@ test:
 
 production:
   <<: *default
-  database: shoes_db
+  database: <%= ENV["database"] %>
+  username: <%= ENV["username"] %>
+  password: <%= ENV["password"] %>
+  host:  <%= ENV["host"] %>
+  
