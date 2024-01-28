@@ -1,5 +1,4 @@
 import './App.css';
-import data from './data/shoes.json'
 import AppCard from './components/AppCard';
 import { useState, useEffect } from 'react';
 
@@ -7,7 +6,6 @@ const getFromLocal = () => {
   const storedData = localStorage.getItem('cartItems');
   if (storedData) {
     const parsedData = JSON.parse(storedData);
-    console.log(parsedData);
     return parsedData;
   } else {
     console.log('Không có dữ liệu trong Local Storage');
@@ -17,7 +15,7 @@ function App() {
   const [products,setProducts] = useState([])
   const localData  = getFromLocal();
   const domain = process.env.API_DOMAIN || "http://localhost:3000"
-  console.log(process.env.API_DOMAIN);
+  console.log('domain',process.env.API_DOMAIN);
 
   useEffect(()=>{
     const getProducts = async () =>{
