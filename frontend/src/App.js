@@ -17,6 +17,7 @@ function App() {
   const [products,setProducts] = useState([])
   const localData  = getFromLocal();
   const domain = process.env.api_domain || "http://localhost:3000"
+  console.log(process.env.api_domain);
 
   useEffect(()=>{
     const getProducts = async () =>{
