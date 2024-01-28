@@ -14,9 +14,8 @@ const getFromLocal = () => {
 function App() {
   const [products,setProducts] = useState([])
   const localData  = getFromLocal();
-  const domain = process.env.API_DOMAIN || "https://backend-cli2.onrender.com/"
-  console.log('domain',process.env.API_DOMAIN);
-
+  const domain = process.env.REACT_APP_API_DOMAIN || "https://backend-cli2.onrender.com/"
+  console.log(process.env.REACT_APP_API_DOMAIN)
   useEffect(()=>{
     const getProducts = async () =>{
       await fetch(`${domain}/api/product`).then(res=>res.json()).then(data=>{
