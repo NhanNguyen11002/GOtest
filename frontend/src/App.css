@@ -1,0 +1,251 @@
+.App {
+  align-items: center;
+  display:flex;
+  justify-content: space-between;
+  max-width: 760px;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20;
+  padding-right: 20;
+}
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(100px);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+}
+.App::before{
+  content: "";
+  display: block;
+  position: fixed;
+  width: 300%;
+  height: 100%;
+  top: 45%;
+  left: -30%;
+  border-radius: 100%;
+  background-color: #f6c90e;
+  z-index: -1;
+  -webkit-animation: wave 8s ease-in-out infinite alternate;
+  animation: wave 8s ease-in-out infinite alternate;
+}
+
+
+.appCard {
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 360px;
+  height: 600px;
+  box-shadow: 0 3.2px 2.2px rgba(0,0,0,.02), 0 7px 5.4px rgba(0,0,0,.028), 0 12.1px 10.1px rgba(0,0,0,.035), 0 19.8px 18.1px rgba(0,0,0,.042), 0 34.7px 33.8px rgba(0,0,0,.05), 0 81px 81px rgba(0,0,0,.07);
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 0 28px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.appCardBody {
+  height: calc(100% - 98px);
+  position: relative;
+  overflow-y: scroll;
+}
+.appCardBody::-webkit-scrollbar{
+  display: none;
+}
+
+.shoeCard {
+  padding: 40px 0;
+
+}
+.shoeCard:first-child{
+  padding: 0;
+}
+
+.cartCard {
+  display: flex;
+  padding: 20px 0;
+
+}
+
+.appCard:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  background-color: #f6c90e;
+  top: -20%;
+  left: -50%;
+  z-index: 0
+}
+.title {
+  font-size:24px ;
+  font-weight: 700;
+  position: relative;
+  z-index: 100;
+  margin: 0;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  color: #303841;
+
+}
+.head {
+  margin: 12px 0;
+  position: relative;
+  height: 26.01px;
+}
+.headTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 16px 0;
+}
+
+.logo {
+  width: 50px;
+}
+.itemImage {
+  border-radius: 30px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.itemImage img{
+  display: block;
+  width: 100%;
+  filter: drop-shadow(0 30px 20px rgba(0,0,0,.2));
+  transform: rotate(-24deg);
+  margin-left: -16px;
+}
+.itemName {
+  font-size: 20px;
+    font-weight: 700;
+    margin: 26px 0 20px;
+    line-height: 1.5;
+}
+
+.itemDescription {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.itemBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.itemPrice {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.addCartButton {
+  cursor: pointer;
+    background-color: #f6c90e;
+    font-weight: 700;
+    font-size: 14px;
+    box-sizing: border-box;
+    width: auto;
+    height: 46px;
+    min-width: 46px;
+    padding: 16px 20px;
+    border-radius: 100px;
+    transition: all 2.0s ease;
+    user-select: none;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.inCartButton {
+  width: 46px;
+  pointer-events: none;
+  cursor: default;
+  justify-content: center;
+}
+.check{
+  width: 24px;
+  height: 24px;
+}
+.itemCartImage {
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  margin-right: 34px;
+}
+.itemCartImageBlock img {
+  display: block;
+  width: 140%;
+  transform: rotate(-28deg) translateY(-40px);
+  filter: drop-shadow(0 30px 20px rgba(0,0,0,.2));
+}
+.itemActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.itemCartName {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.itemCartPrice {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.cartRight{
+  flex:1
+}
+.itemCount {
+  
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.itemCount .action{
+  cursor: pointer;
+  width: 28px;
+  height: 28px ;
+  line-height: 28px;
+  border-radius: 100%;
+  background-color: #eee;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .2s;
+  user-select: none;
+}
+.itemCount .count{
+  font-size: 14px;
+  margin: 0 8px;
+  width: 20px;
+  text-align: center;
+}
+.itemRemove {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6c90e;
+  transition: .2s;
+  user-select: none;
+}
+.itemRemove img {
+  width: 16px;
+  height: 16px;
+}
