@@ -249,3 +249,31 @@ body {
   width: 16px;
   height: 16px;
 }
+
+@media only screen and (max-width:768px){
+    .App{
+      flex-direction: column;
+      height: auto;
+    }
+    .appCard{
+      margin: 20px auto;
+    }
+  
+}
+@media only screen and (max-width:425px){
+  .App{
+    padding: 0 8px;
+  }
+  .appCard{
+    width: 340px;
+  }
+
+}
+@media only screen and (max-width:320px){
+  .appCard{
+    width: 300px;
+    height: 480px;
+    padding: 0 14px;
+  }
+
+}

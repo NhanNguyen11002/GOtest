@@ -14,8 +14,7 @@ const getFromLocal = () => {
 function App() {
   const [products,setProducts] = useState([])
   const localData  = getFromLocal();
-  const domain = process.env.REACT_APP_API_DOMAIN || "https://backend-cli2.onrender.com/"
-  console.log(process.env.REACT_APP_API_DOMAIN)
+  const domain = process.env.REACT_APP_API_DOMAIN || "https://backend-cli2.onrender.com"
   useEffect(()=>{
     const getProducts = async () =>{
       await fetch(`${domain}/api/product`).then(res=>res.json()).then(data=>{
@@ -41,7 +40,6 @@ function App() {
 
   const addCart = (index) => {
     const copyArr = [...products]; 
-    console.log(copyArr)
     copyArr[index].inCart = true;
     copyArr[index].count = 1;
     setProducts(copyArr)
