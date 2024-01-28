@@ -16,10 +16,11 @@ const getFromLocal = () => {
 function App() {
   const [products,setProducts] = useState([])
   const localData  = getFromLocal();
-  
+  const domain = process.env.api_domain || "http://localhost:3000"
+
   useEffect(()=>{
     const getProducts = async () =>{
-      await fetch('http://localhost:3000/api/product').then(res=>res.json()).then(data=>{
+      await fetch(`${domain}/api/product`).then(res=>res.json()).then(data=>{
         let map = new Map();
         localData.forEach(shoe=>{
           map.set(shoe.id,shoe.count)
