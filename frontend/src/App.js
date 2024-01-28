@@ -14,7 +14,7 @@ const getFromLocal = () => {
 function App() {
   const [products,setProducts] = useState([])
   const localData  = getFromLocal();
-  const domain = process.env.API_DOMAIN || "http://localhost:3000"
+  const domain = process.env.API_DOMAIN || "https://backend-cli2.onrender.com/"
   console.log('domain',process.env.API_DOMAIN);
 
   useEffect(()=>{
